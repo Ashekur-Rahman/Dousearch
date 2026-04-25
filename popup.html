@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DouSearch</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="aurora"></div>
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<div class="content">
+
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo-icon">🔍</div>
+      <div>
+        <div class="logo-text"><span class="pink">DOU</span><span>SEARCH</span></div>
+        <div class="logo-sub">Search Douyin Videos without login</div>
+      </div>
+    </div>
+    <div class="header-icons">
+      <div class="icon-btn" id="historyBtn" title="History">🕐</div>
+      <div class="icon-btn" id="settingsBtn" title="Settings">⚙️</div>
+    </div>
+  </div>
+
+  <div class="platform-toggle">
+    <span class="pt-label">Platform:</span>
+    <div class="ptag active" id="pt-douyin">Douyin</div>
+    <div class="ptag" id="pt-tiktok">TikTok</div>
+  </div>
+
+  <div class="search-wrap">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="flex-shrink:0">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input class="search-input" id="keyword" placeholder="Enter keyword to search..." autocomplete="off"/>
+    <button class="search-action-btn" id="clearBtn" title="Clear" style="display:none">✕</button>
+    <button class="search-action-btn paste-btn" id="pasteBtn" title="Paste from clipboard">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <rect x="9" y="2" width="6" height="4" rx="1"/><path d="M7 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/>
+        <rect x="7" y="10" width="10" height="1.5" rx="0.75"/><rect x="7" y="13.5" width="10" height="1.5" rx="0.75"/><rect x="7" y="17" width="6" height="1.5" rx="0.75"/>
+      </svg>
+      Paste
+    </button>
+  </div>
+
+  <button class="search-btn" id="searchBtn">
+    <span id="btnText">Search Douyin</span>
+    <span class="arrow">›</span>
+  </button>
+
+  <div class="tab-bar">
+    <div class="tab active" id="tab-popular">🔥 Trending</div>
+    <div class="tab" id="tab-history">🕐 History</div>
+    <div class="tab" id="tab-settings">⚙️ Settings</div>
+  </div>
+
+  <div class="panel active" id="panel-popular">
+    <div class="tags-grid" id="tagsGrid"></div>
+  </div>
+
+  <div class="panel" id="panel-history">
+    <div id="historyList"></div>
+    <div id="noHistory" class="empty-state">No recent searches yet</div>
+  </div>
+
+  <div class="panel" id="panel-settings">
+    <div class="settings-row">
+      <span>Open in new tab</span>
+      <div class="toggle on" id="t-newtab"></div>
+    </div>
+    <div class="settings-row">
+      <span>Save search history</span>
+      <div class="toggle on" id="t-history"></div>
+    </div>
+    <div class="settings-row">
+      <span>Bypass login (auto)</span>
+      <div class="toggle on" id="t-bypass"></div>
+    </div>
+    <div class="settings-row">
+      <span>Copy URL on search</span>
+      <div class="toggle" id="t-copy"></div>
+    </div>
+    <div class="settings-row" style="border:none;margin-top:4px">
+      <span class="version-label">DouSearch v2.2 · MIT License</span>
+      <span class="clear-btn" id="clearHistoryBtn">Clear history</span>
+    </div>
+  </div>
+
+  <div class="how-it-works">
+    <div class="section-title">How it works</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">⌨️</div>
+        <div class="step-label">Type</div>
+        <div class="step-desc">Enter what you want</div>
+      </div>
+      <div class="step-arrow">›</div>
+      <div class="step">
+        <div class="step-icon">🌐</div>
+        <div class="step-label">Open</div>
+        <div class="step-desc">Opens best result</div>
+      </div>
+      <div class="step-arrow">›</div>
+      <div class="step">
+        <div class="step-icon">🛡️</div>
+        <div class="step-label">Bypass</div>
+        <div class="step-desc">No login popup!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Made with <span class="footer-heart">♥</span> by ASHEK</span>
+    <a class="github-btn" id="githubBtn" href="#">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+      Star on GitHub
+    </a>
+  </div>
+</div>
+
+<div class="copy-toast" id="toast">🔗 URL copied!</div>
+<div class="copy-toast" id="toast-paste">📋 Pasted!</div>
+<script src="popup.js"></script>
+</body>
+</html>
