@@ -10,7 +10,7 @@
 
 ## 📂 Installation (Manual Load)
 Since this is a developer version, follow these steps to install:
-1. Download this repository as a ZIP and extract it.
+1. Download this repository as a ZIP file or get the ZIP from the Releases section and extract it.
 2. Open your Chrome browser and go to `chrome://extensions/`.
 3. Enable **Developer mode** (top right toggle).
 4. Click **Load unpacked** and select the folder containing `manifest.json`.
